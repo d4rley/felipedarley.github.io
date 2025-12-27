@@ -1,0 +1,565 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #7aa2ff, #a9cbff);
+  color: #1f2933;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.cargo {
+  margin-top: 8px;
+  margin-bottom: 32px;
+  font-size: 1.1rem;
+  color: #1e293b;
+  opacity: 0.85;
+}
+
+.stack {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Accordion */
+.accordion {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accordion:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+.accordion-header {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 18px 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+.accordion-header span:first-child {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
+
+.arrow.open {
+  transform: rotate(90deg);
+}
+
+.accordion-content {
+  padding: 0 20px 18px;
+  animation: fadeSlide 0.3s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ul {
+  padding-left: 18px;
+}
+
+li {
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.opcional {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+.profile-card {
+  width: 100%;
+  max-width: 460px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+  /* REMOVE QUALQUER FOCO / BORDA DO BOTÃO DO ACCORDION */
+.accordion-header,
+.accordion-header:focus,
+.accordion-header:active,
+.accordion-header:focus-visible {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Evita highlight ao clicar */
+.accordion-header::-moz-focus-inner {
+  border: 0;
+}
+.accordion-body ul {
+  padding-left: 10;
+  margin-left: 10;
+  list-style-position: inside;
+}
+/* =====================
+   LAYOUT GERAL
+===================== */
+
+.page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+
+
+/* =====================
+   SOBRE MIM (DIREITA)
+===================== */
+
+.about {
+  max-width: 520px;
+  align-self: center;
+}
+
+.about h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+.about p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #1e293b;
+  margin-bottom: 18px;
+}
+/* =====================
+   SOBRE MIM - CARD LEVE
+===================== */
+
+.about-card {
+  max-width: 560px;
+  padding: 32px 36px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  align-self: center;
+}
+
+.about-card h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  color: #0f172a;
+}
+
+.about-card p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #1e293b;
+  margin-bottom: 18px;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+/* CTA BUTTON */
+.cta-button {
+  margin-top: 26px;
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: none;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  background: #020617;
+}
+/* NOVA SEÇÃO */
+.section {
+  min-height: 100vh;
+  padding: 80px;
+  background: linear-gradient(135deg, #93c5fd, #bfdbfe);
+  animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* BOTÃO OUTLINE DISCRETO */
+.link-button {
+  margin-top: 22px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: 2px solid #0f172a;
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: all 0.25s ease;
+}
+
+/* Hover elegante */
+.link-button:hover {
+  background: #0f172a;
+  color: #ffffff;
+  gap: 12px;
+}
+
+/* Remove foco feio */
+.link-button:focus,
+.link-button:focus-visible {
+  outline: none;
+}
+/* ÁREA DIREITA COM SLIDE */
+.right-area {
+  width: 520px;
+  overflow: hidden;
+}
+
+.right-slider {
+  display: flex;
+  width: 1040px;
+  transition: transform 0.6s ease;
+}
+
+.right-slider.about {
+  transform: translateX(0);
+}
+
+.right-slider.projects {
+  transform: translateX(-520px);
+}
+
+.right-panel {
+  width: 520px;
+  flex-shrink: 0;
+}
+
+/* CARD PROJETOS */
+.projects-card {
+  padding: 32px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+}
+
+.project {
+  margin-bottom: 22px;
+}
+
+.project h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.project p {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #1e293b;
+}
+
+.project span {
+  font-size: 0.85rem;
+  color: #475569;
+}
+/* =====================
+   VIDEO NO FORMATO SHORTS (9:16)
+===================== */
+
+.project-video {
+  margin: 28px auto 0;
+  width: 100%;
+  max-width: 240px; /* largura típica de shorts */
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.project-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}/* ===== ÁREA DIREITA COM SLIDE ===== */
+.right-area {
+  width: 520px;
+  overflow: hidden;
+}
+
+.right-slider {
+  display: flex;
+  width: 1560px; /* 3 telas */
+  transition: transform 0.6s ease;
+}
+
+.right-slider.about {
+  transform: translateX(0);
+}
+
+.right-slider.projects {
+  transform: translateX(-520px);
+}
+
+.right-slider.totocoin {
+  transform: translateX(-1040px);
+}
+
+.right-panel {
+  width: 520px;
+  flex-shrink: 0;
+}
+
+/* ===== BOTÃO PEQUENO ===== */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.mini-button {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1.5px solid #0f172a;
+  background: transparent;
+  color: #0f172a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mini-button:hover {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* ===== VIDEO SHORTS ===== */
+.project-video {
+  margin: 28px auto 0;
+  max-width: 240px;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.project-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* Centraliza os cards "Sobre mim" e "Projetos" */
+.right-panel {
+  display: flex;
+  align-items: center;      /* centraliza verticalmente */
+  justify-content: center;  /* centraliza horizontalmente */
+}
+/* Botões do card Projetos (Voltar | Experiências) */
+.projects-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 28px;
+}
+
+/* Atualiza largura do slider para 4 telas */
+.right-slider {
+  width: 2080px; /* 4 x 520 */
+}
+
+.right-slider.experience {
+  transform: translateX(-1560px);
+}
+.right-slider {
+  width: 2080px;
+}
+
+.right-slider.experience {
+  transform: translateX(-1560px);
+}
+.right-slider {
+  width: 2080px;
+}
+
+.right-slider.about { transform: translateX(0); }
+.right-slider.projects { transform: translateX(-520px); }
+.right-slider.totocoin { transform: translateX(-1040px); }
+.right-slider.experience { transform: translateX(-1560px); }
+.lang-flags {
+  position: fixed;
+  top: 16px;
+  right: 24px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.lang-flags button {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.lang-flags button.active {
+  opacity: 1;
+}
+
+.lang-flags button:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+/* =====================
+   LANGUAGE SWITCH (FLAGS)
+===================== */
+
+.lang-flags {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  display: flex;
+  gap: 12px;
+  z-index: 999;
+}
+
+.lang-flags button {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.25s ease;
+}
+
+/* hover */
+.lang-flags button:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* ativo */
+.lang-flags button.active {
+  opacity: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* remove foco feio */
+.lang-flags button:focus,
+.lang-flags button:focus-visible {
+  outline: none;
+}
+/* =====================
+   LANGUAGE FLAGS
+===================== */
+
+.lang-flags {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  display: flex;
+  gap: 12px;
+  z-index: 9999;
+}
+
+.lang-flags button {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  opacity: 0.45;
+  transition: all 0.2s ease;
+}
+
+.lang-flags button:hover {
+  opacity: 0.75;
+}
+
+.lang-flags button.active {
+  opacity: 1;
+  transform: scale(1.58);
+}
+
+.lang-flags img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}

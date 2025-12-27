@@ -1,0 +1,27 @@
+.accordion-body {
+  padding: 10px 18px 18px;
+  background: rgba(255, 255, 255, 0.5);
+  animation: accordionOpen 0.25s ease;
+}
+
+@keyframes accordionOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.accordion-header {
+  outline: none;
+}
+
+.accordion-header:focus {
+  outline: none;
+}
+
+.accordion-header:focus-visible {
+  outline: none;
+}
