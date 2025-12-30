@@ -577,34 +577,35 @@ body {
   opacity: 0.9;
 }
 /* =========================
-   MOBILE (até 768px)
+   MOBILE FIX DEFINITIVO
 ========================= */
 @media (max-width: 768px) {
-  html,
-  body {
-    overflow: auto;
+
+  html, body {
+    overflow-x: hidden;
   }
 
+  /* layout geral */
   .page {
     flex-direction: column;
     height: auto;
-    gap: 32px;
+    gap: 24px;
     padding-top: 70px;
   }
 
-  /* ===== FLAGS ===== */
+  /* FLAGS */
   .lang-flags {
     position: fixed;
     top: 12px;
     right: 12px;
     display: flex;
     gap: 10px;
-    z-index: 100;
+    z-index: 999;
   }
 
   .lang-flags button {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     padding: 0;
     border-radius: 10px;
   }
@@ -612,10 +613,9 @@ body {
   .lang-flags img {
     width: 26px;
     height: 26px;
-    object-fit: contain;
   }
 
-  /* ===== ESQUERDA ===== */
+  /* ESQUERDA */
   .container {
     min-height: auto;
     padding: 0 16px;
@@ -623,54 +623,48 @@ body {
 
   .profile-card {
     max-width: 100%;
-    padding: 24px 20px;
   }
 
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  .cargo {
-    font-size: 1rem;
-  }
-
-  /* ===== DIREITA ===== */
+  /* =========================
+     DESLIGA SLIDER NO MOBILE
+  ========================= */
   .right-area {
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .right-slider {
-    width: 400%;
+    display: block;
+    width: 100%;
+    transform: none !important;
   }
 
   .right-panel {
     width: 100%;
     padding: 0 16px;
-    justify-content: flex-start;
+    margin-bottom: 32px;
+    display: none;
   }
 
+  /* mostra só o painel ativo */
+  .right-slider.about .right-panel:nth-child(1),
+  .right-slider.projects .right-panel:nth-child(2),
+  .right-slider.totocoin .right-panel:nth-child(3),
+  .right-slider.experience .right-panel:nth-child(4) {
+    display: block;
+  }
+
+  /* cards */
   .about-card,
   .projects-card {
     width: 100%;
     max-width: 100%;
-    padding: 24px 20px;
   }
 
-  /* ===== SOCIALS ===== */
-  .socials {
-    justify-content: center;
-    margin-bottom: 18px;
-  }
-
-  .socials a {
-    font-size: 1.2rem;
-  }
-
-  /* ===== BOTÕES ===== */
+  /* botões */
   .projects-actions {
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
 
   .link-button {
@@ -678,22 +672,42 @@ body {
     justify-content: center;
   }
 
-  .mini-button {
-    font-size: 0.8rem;
-  }
-
-  /* ===== VIDEO SHORTS ===== */
+  /* video shorts */
   .project-video {
     max-width: 220px;
     margin: 20px auto;
   }
 
-  /* ===== TEXTO ABAIXO DO VIDEO ===== */
   .project-description {
-    font-size: 0.9rem;
     text-align: center;
+    font-size: 0.9rem;
     line-height: 1.6;
     margin-top: 16px;
-    color: #1e293b;
   }
+}
+/* =========================
+   SCROLL CORRETO NO MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  html,
+  body {
+    height: auto;
+    overflow-y: auto;   /* ATIVA ROLAGEM */
+    overflow-x: hidden;
+  }
+
+  /* garante que a página possa crescer */
+  .page {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* evita travamento por containers internos */
+  .container,
+  .right-area {
+    min-height: auto;
+    height: auto;
+  }
+
 }
