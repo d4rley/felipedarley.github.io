@@ -1,5 +1,5 @@
 {
-  "homepage": "https://d4rley.github.io/meu-portfolio",
+  "homepage": "https://felipedarley.github.io",
   "name": "meu-portfolio",
   "private": true,
   "version": "0.0.0",
@@ -7,9 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy": "npm run build && gh-pages -d dist",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",
