@@ -278,8 +278,9 @@ body {
 }
 /* ÁREA DIREITA COM SLIDE */
 .right-area {
-  width: 520px;
-  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .right-slider {
@@ -562,4 +563,137 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+}
+/* =====================
+   VIDEO DESCRIPTION
+===================== */
+
+.video-description {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #334155;
+  text-align: center;
+  opacity: 0.9;
+}
+/* =========================
+   MOBILE (até 768px)
+========================= */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow: auto;
+  }
+
+  .page {
+    flex-direction: column;
+    height: auto;
+    gap: 32px;
+    padding-top: 70px;
+  }
+
+  /* ===== FLAGS ===== */
+  .lang-flags {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+  }
+
+  .lang-flags button {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 10px;
+  }
+
+  .lang-flags img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+
+  /* ===== ESQUERDA ===== */
+  .container {
+    min-height: auto;
+    padding: 0 16px;
+  }
+
+  .profile-card {
+    max-width: 100%;
+    padding: 24px 20px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .cargo {
+    font-size: 1rem;
+  }
+
+  /* ===== DIREITA ===== */
+  .right-area {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .right-slider {
+    width: 400%;
+  }
+
+  .right-panel {
+    width: 100%;
+    padding: 0 16px;
+    justify-content: flex-start;
+  }
+
+  .about-card,
+  .projects-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 20px;
+  }
+
+  /* ===== SOCIALS ===== */
+  .socials {
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .socials a {
+    font-size: 1.2rem;
+  }
+
+  /* ===== BOTÕES ===== */
+  .projects-actions {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .link-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mini-button {
+    font-size: 0.8rem;
+  }
+
+  /* ===== VIDEO SHORTS ===== */
+  .project-video {
+    max-width: 220px;
+    margin: 20px auto;
+  }
+
+  /* ===== TEXTO ABAIXO DO VIDEO ===== */
+  .project-description {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 16px;
+    color: #1e293b;
+  }
 }

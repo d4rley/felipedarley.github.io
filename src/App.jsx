@@ -3,11 +3,13 @@ import Accordion from "./components/Accordion";
 import "./App.css";
 import { Github, Linkedin, Mail, Phone, Instagram } from "lucide-react";
 
+
 // FLAGS
 import brasilFlag from "./assets/brasil.png";
 import euaFlag from "./assets/eua.png";
 
 function App() {
+  const isMobile = window.innerWidth <= 768;
   const [openIndex, setOpenIndex] = useState(null);
   const [rightView, setRightView] = useState("about");
   const [lang, setLang] = useState("pt");
@@ -32,11 +34,19 @@ function App() {
       about3:
         "Tenho familiaridade com React no frontend e com ambientes Linux/VPS, utilizando Nginx, PM2 e Git no dia a dia.",
 
-      viewProjects: "Ver projetos →",
+      viewProjects: "Ver projetos →",//
+      project2: "API de Pagamentos",
+      project3: "Sistema Administrativo",
+      totocoin: "Plataforma financeira com integração Pix.",
+      apipay: "API REST para pagamentos e webhooks.",
+      sispay: "Dashboard administrativo integrado à API.",
       projects: "🚀 Projetos",
       viewProject: "Visualizar projeto",
       back: "← Voltar",
       experienceBtn: "Experiências →",
+      videoText:
+        "Demonstração em vídeo do funcionamento da plataforma Totocoin, evidenciando a integração Pix, o fluxo de pagamentos e a estrutura da aplicação.",
+
 
       experienceTitle: "💼 Experiências",
       exp1Title: "2024 — Backend Developer | Bendegó",
@@ -61,11 +71,19 @@ function App() {
       about3:
         "I have experience with React on the frontend and Linux/VPS environments, using Nginx, PM2 and Git daily.",
 
-      viewProjects: "View projects →",
+      viewProjects: "View projects →",//
+      project2: "Payment Processing API",
+      project3: "Administrative Management System",
+      totocoin: "Financial platform with Pix integration.",
+      apipay: "REST API for payments and webhooks.",
+      sispay: "Administrative dashboard integrated with the API.",
       projects: "🚀 Projects",
       viewProject: "View project",
       back: "← Back",
       experienceBtn: "Experience →",
+      videoText:
+        "Video demonstration of the Totocoin platform, highlighting Pix integration, payment flow, and overall application structure.",
+
 
       experienceTitle: "💼 Experience",
       exp1Title: "2024 — Backend Developer | Bendegó",
@@ -156,11 +174,51 @@ function App() {
           <div className="right-panel">
             <div className="about-card">
               <div className="socials">
-                <Github />
-                <Instagram />
-                <Linkedin />
-                <Mail />
-                <Phone />
+                <div className="socials">
+                  <a
+                    href="https://github.com/d4rley"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="GitHub"
+                  >
+                    <Github />
+                  </a>
+
+                  <a
+                    href="https://instagram.com/fe_darley"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram"
+                  >
+                    <Instagram />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/felipe-pontes-290a4120b/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin />
+                  </a>
+
+                  <a
+                    href="mailto:felipedarley72@gmail.com"
+                    aria-label="Email"
+                  >
+                    <Mail />
+                  </a>
+
+                  <a
+                    href="https://wa.me/5584988860352"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="WhatsApp"
+                  >
+                    <Phone />
+                  </a>
+                </div>
+
               </div>
 
               <h2>{t[lang].aboutTitle}</h2>
@@ -192,19 +250,19 @@ function App() {
                     {t[lang].viewProject}
                   </button>
                 </div>
-                <p>Plataforma financeira com integração Pix.</p>
+                <p className="cargo">{t[lang].totocoin}</p>
                 <span>PHP • Laravel • MySQL • Pix</span>
               </div>
 
               <div className="project">
-                <h3>API de Pagamentos</h3>
-                <p>API REST para pagamentos e webhooks.</p>
+                <h3 className="cargo">{t[lang].project2}</h3>
+                <p className="cargo">{t[lang].apipay}</p>
                 <span>Laravel • MySQL • API REST</span>
               </div>
 
               <div className="project">
-                <h3>Sistema Administrativo</h3>
-                <p>Dashboard administrativo integrado à API.</p>
+                <h3 className="cargo">{t[lang].project3}</h3>
+                <p className="cargo">{t[lang].sispay}</p>
                 <span>React • API REST</span>
               </div>
 
@@ -237,7 +295,9 @@ function App() {
                   title="Totocoin"
                   allowFullScreen
                 />
-              </div>
+              </div><p className="video-description">
+                {t[lang].videoText}
+              </p>
 
               <button
                 className="link-button"
