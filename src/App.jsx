@@ -290,20 +290,15 @@ function App() {
               <h2>🚀 Totocoin</h2>
 
               <div className="project-video">
-                <div className="project-video">
-  <video
-    controls
-    playsInline
-    preload="metadata"
-  >
-    <source src="/docs/assets/totocoin.mp4" type="video/mp4" />
+  <video controls playsInline>
+    <source
+      src={`${import.meta.env.BASE_URL}videos/totocoin.mp4`}
+      type="video/mp4"
+    />
     Seu navegador não suporta vídeo.
   </video>
 </div>
 
-              </div><p className="video-description">
-                {t[lang].videoText}
-              </p>
 
               <button
                 className="link-button"
