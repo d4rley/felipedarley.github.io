@@ -291,7 +291,7 @@ function App() {
 
               <div className="project-video">
                 <iframe
-                  src="https://www.youtube.com/embed/n6yRSZpQPUk"
+                  src="https://www.youtube.com/embed/tzNoz_dzGJc"
                   title="Totocoin"
                   allowFullScreen
                 />
