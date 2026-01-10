@@ -2,6 +2,7 @@ import { useState } from "react";
 import Accordion from "./components/Accordion";
 import "./App.css";
 import { Github, Linkedin, Mail, Phone, Instagram } from "lucide-react";
+import totocoinVideo from "./assets/totocoin.mp4";
 
 
 // FLAGS
@@ -290,11 +291,13 @@ function App() {
               <h2>🚀 Totocoin</h2>
 
               <div className="project-video">
-  <video controls playsInline>
-    <source
-      src={`${import.meta.env.BASE_URL}videos/totocoin.mp4`}
-      type="video/mp4"
-    />
+  <video
+    controls
+    playsInline
+    width="100%"
+    height="100%"
+  >
+    <source src={totocoinVideo} type="video/mp4" />
     Seu navegador não suporta vídeo.
   </video>
 </div>
